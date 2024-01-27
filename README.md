@@ -10,10 +10,13 @@ The script does 3 main things:
  2. Deletes the Info_HD.txt file if it exists.
  3. Renames the images from `000074660003_1.jpg` to `R7466F3.jpg`, a simplification into this format: `R{roll_number}F{frame_number}.jpg`.
 
-## Requirements
-The script was written in Python 3.9, but likely works for Python 3.6 and newer. Use `pip install -r requirements/default.txt` to install the required python packages. In addition, exiftool must be installed and available in the PATH as `exiftool`.
+## Installation
+TODO: update this when the wheel is easier to find/download.
+The script was written in Python 3.9, but likely works for Python 3.6 and newer. To install, use either `pip` or `pipx` to install the `frontier-scans-cleanup` package.
+
+*[ExifTool](https://exiftool.org/install.html)* must both be installed for the script to work. For MacOS users, you can alternatively use Homebrew to install it: `brew install exiftool`.
 
 ## Run
-Run `python cleanup.py` in the directory you wish to search for Noritsu scans from. Alternatively, you can specify the location as an argument: `python cleanup.py 20211226/00007466/`.
-
-By default, the script will not keep the frame number from the DX reader (in the filename) in the renamed files, and instead use an auto-incrementing sequence number starting at 01. If you would like to keep the original frame numbers, add `--use_frame_names`, but keep in mind this may cause image to overwrite if multiple images have the same frame number (such as when the DX reader can't detect frames, or if the film has no rebate).
+Run `noritsu-clean` in the directory you wish to search for Noritsu scans from. Alternatively, you can specify the location as an argument: `noritsu-clean 20211226/00007466/`.
+## Optional flags
+By default, the script will not keep the frame number from the DX reader (in the filename) in the renamed files, and instead use an auto-incrementing sequence number starting at 01. If you would like to keep the original frame numbers, add the `--use_frame_names` argument, but keep in mind this may cause image to overwrite if multiple images have the same frame number (such as when the DX reader can't detect frames, or if the film has no rebate).
