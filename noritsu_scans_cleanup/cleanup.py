@@ -248,7 +248,7 @@ class NoritsuEZCCleaner:
                     print(f"exiftool: {result}")
 
 
-if __name__ == "__main__":
+def cli():
     parser = argparse.ArgumentParser(
         description="Sanitizes Noritsu scan files by renaming images and "
         "correcting EXIF metadata."
@@ -283,3 +283,7 @@ if __name__ == "__main__":
             roll_padding=args.roll_padding,
             use_frame_names=args.use_frame_names)
         cleaner.clean()
+
+
+if __name__ == "__main__":
+    cli()

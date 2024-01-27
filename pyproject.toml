@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "noritsu-scans-cleanup"
+version = "0.1.0"
+description = "A script to fix metadata and reorganize film scans from Noritsu film scanners."
+authors = ["Bobo Li <bobo@photolaundrysf.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+PyExifTool = "^0.5.6"
+
+[tool.poetry.scripts]
+noritsu-clean = "noritsu_scans_cleanup.cleanup:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
