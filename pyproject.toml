@@ -12,6 +12,9 @@ PyExifTool = "^0.5.6"
 [tool.poetry.scripts]
 noritsu-clean = "noritsu_scans_cleanup.cleanup:cli"
 
+[tool.ruff]
+line-length = 79
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
